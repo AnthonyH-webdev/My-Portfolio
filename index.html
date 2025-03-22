@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anthony's Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Add Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Add Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Add Neon Tubes Font -->
+  <link href="https://fonts.cdnfonts.com/css/neon-tubes-2" rel="stylesheet">
+  <!-- Add Orbitron font for futuristic look -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: url('images/download(2).jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(10, 0, 20, 0.85) 0%, rgba(26, 16, 64, 0.85) 50%, rgba(12, 20, 54, 0.85) 100%);
+      z-index: 0;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 2rem;
+      background: rgba(16, 14, 37, 0.7);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      max-width: 800px;
+      margin: 20vh auto 2rem auto;
+    }
+
+    .hero h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 4.5rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 1rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-shadow: 
+        0 0 4px #fff,
+        0 0 7px #fff,
+        0 0 15px #fff,
+        0 0 30px #00f7ff,
+        0 0 45px #00f7ff,
+        0 0 55px #00f7ff,
+        0 0 70px #00f7ff;
+      animation: neon-flicker 3s infinite alternate;
+    }
+
+    @keyframes neon-flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow: 
+          0 0 4px #fff,
+          0 0 7px #fff,
+          0 0 15px #fff,
+          0 0 30px #00f7ff,
+          0 0 45px #00f7ff,
+          0 0 55px #00f7ff,
+          0 0 70px #00f7ff;
+      }
+      20%, 24%, 55% {
+        text-shadow: 
+          0 0 2px #fff,
+          0 0 5px #fff,
+          0 0 10px #00f7ff,
+          0 0 20px #00f7ff;
+      }
+    }
+
+    .hero h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 1rem;
+      letter-spacing: 0.1em;
+    }
+
+    #animated-role {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: #fff;
+      min-height: 2.5rem;
+      letter-spacing: 0.05em;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+
+    .navbar {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(16, 14, 37, 0.7);
+      backdrop-filter: blur(10px);
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 100;
+    }
+
+    .navbar ul {
+      display: flex;
+      gap: 3rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .navbar a:hover {
+      background: rgba(0, 247, 255, 0.1);
+      transform: translateY(-2px);
+      box-shadow: 0 0 15px rgba(0, 247, 255, 0.3);
+    }
+
+    .navbar i {
+      font-size: 1.2rem;
+      color: #00f7ff;
+    }
+
+    @media (max-width: 768px) {
+      .navbar ul {
+        gap: 1.5rem;
+      }
+
+      .navbar a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        letter-spacing: 0.1em;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+        letter-spacing: 0.08em;
+      }
+
+      #animated-role {
+        font-size: 1.5rem;
+        letter-spacing: 0.03em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero-content">
+    <h1>Portfolio</h1>
+    <h2>Anthony Hernandez</h2>
+    <h3 id="animated-role"></h3>
+  </div>
+  
+  <nav class="navbar">
+    <ul>
+      <li>
+        <a href="aboutme.html">
+          <i class="fas fa-user"></i>
+          About Me
+        </a>
+      </li>
+      <li>
+        <a href="projects.html">
+          <i class="fas fa-code"></i>
+          Projects
+        </a>
+      </li>
+      <li>
+        <a href="school.html">
+          <i class="fas fa-graduation-cap"></i>
+          School
+        </a>
+      </li>
+      <li>
+        <a href="contact.html">
+          <i class="fas fa-envelope"></i>
+          Contact
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <script>
+    const roleElement = document.getElementById('animated-role');
+    const roles = ['Novice Software Engineer', 'Web Developer', 'Problem Solver', 'Quick Learner'];
+    let currentRoleIndex = 0;
+    let currentText = '';
+    let isDeleting = false;
+    
+    const settings = {
+      typeSpeed: 200,
+      deleteSpeed: 200,
+      pauseBeforeDelete: 2000,
+      pauseBeforeNext: 1000,
+      initialDelay: 1000
+    };
+
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function typeEffect() {
+      while (true) {
+        for (let role of roles) {
+          for (let i = 0; i <= role.length; i++) {
+            currentText = role.substring(0, i);
+            roleElement.textContent = currentText;
+            await sleep(settings.typeSpeed);
+          }
+
+          await sleep(settings.pauseBeforeDelete);
+
+          for (let i = role.length; i >= 0; i--) {
+            currentText = role.substring(0, i);
+            roleElement.textContent = currentText;
+            await sleep(settings.deleteSpeed);
+          }
+
+          await sleep(settings.pauseBeforeNext);
+        }
+      }
+    }
+
+    setTimeout(() => {
+      typeEffect();
+    }, settings.initialDelay);
+  </script>
+</body>
+</html>

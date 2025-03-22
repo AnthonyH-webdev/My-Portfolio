@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects - Anthony's Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: url('images/download(2).jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(10, 0, 20, 0.85) 0%, rgba(26, 16, 64, 0.85) 50%, rgba(12, 20, 54, 0.85) 100%);
+      z-index: 0;
+    }
+
+    .hero {
+      padding-top: 10vh;
+      margin-bottom: 4rem;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 2rem;
+      background: rgba(16, 14, 37, 0.7);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 1rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-shadow: 
+        0 0 4px #fff,
+        0 0 7px #fff,
+        0 0 15px #fff,
+        0 0 30px #00f7ff,
+        0 0 45px #00f7ff,
+        0 0 55px #00f7ff,
+        0 0 70px #00f7ff;
+      animation: neon-flicker 3s infinite alternate;
+    }
+
+    .hero h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.9);
+      letter-spacing: 0.1em;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    @keyframes neon-flicker {
+      0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+        text-shadow: 
+          0 0 4px #fff,
+          0 0 7px #fff,
+          0 0 15px #fff,
+          0 0 30px #00f7ff,
+          0 0 45k #00f7ff,
+          0 0 55px #00f7ff,
+          0 0 70px #00f7ff;
+      }
+      20%, 24%, 55% {
+        text-shadow: 
+          0 0 2px #fff,
+          0 0 5px #fff,
+          0 0 10px #00f7ff,
+          0 0 20px #00f7ff;
+      }
+    }
+
+    .navbar {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(16, 14, 37, 0.7);
+      backdrop-filter: blur(10px);
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      z-index: 100;
+    }
+
+    .navbar i {
+      color: #00f7ff;
+    }
+
+    .navbar ul {
+      display: flex;
+      gap: 3rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      justify-content: center;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .navbar a:hover {
+      background: rgba(0, 247, 255, 0.1);
+      transform: translateY(-2px);
+      box-shadow: 0 0 15px rgba(0, 247, 255, 0.3);
+    }
+
+    .projects-container {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: rgba(16, 14, 37, 0.7);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .projects-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .projects-header h1 {
+      font-family: 'Orbitron', sans-serif;
+      color: #00f7ff;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+    }
+
+    .projects-header p {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .project-categories {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .category-btn {
+      background: rgba(16, 14, 37, 0.5);
+      border: 2px solid #00f7ff;
+      color: #00f7ff;
+      padding: 0.5rem 1.5rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .category-btn:hover,
+    .category-btn.active {
+      background: rgba(0, 247, 255, 0.1);
+      box-shadow: 0 0 15px rgba(0, 247, 255, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .project-card {
+      background: rgba(16, 14, 37, 0.5);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(0, 247, 255, 0.2);
+      border-color: rgba(0, 247, 255, 0.3);
+    }
+
+    .project-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .project-content {
+      padding: 1.5rem;
+    }
+
+    .project-content h3 {
+      font-family: 'Orbitron', sans-serif;
+      color: #00f7ff;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+    }
+
+    .project-content p {
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-tag {
+      background: rgba(0, 247, 255, 0.1);
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.9rem;
+      color: #00f7ff;
+      border: 1px solid rgba(0, 247, 255, 0.3);
+    }
+
+    .project-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .project-link {
+      color: #00f7ff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.3s ease;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .project-link:hover {
+      text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .project-link i {
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .navbar ul {
+        gap: 1.5rem;
+      }
+
+      .navbar a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>My Projects</h1>
+      <h2>What I've Built</h2>
+    </div>
+  </header>
+
+  <nav class="navbar">
+    <ul>
+      <li>
+        <a href="index.html">
+          <i class="fas fa-home"></i>
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="aboutme.html">
+          <i class="fas fa-user"></i>
+          About Me
+        </a>
+      </li>
+      <li>
+        <a href="school.html">
+          <i class="fas fa-graduation-cap"></i>
+          School
+        </a>
+      </li>
+      <li>
+        <a href="contact.html">
+          <i class="fas fa-envelope"></i>
+          Contact
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="projects-container">
+    <div class="projects-header">
+      <h1>My Projects</h1>
+      <p>Here are some of the projects I've worked on</p>
+    </div>
+
+    <div class="project-categories">
+      <button class="category-btn active">All</button>
+      <button class="category-btn">Web Development</button>
+      <button class="category-btn">Calculator</button>
+      <button class="category-btn">Notes</button>
+    </div>
+
+    <div class="projects-grid">
+      <!-- Calculator Project -->
+      <div class="project-card">
+        <img src="images/calculator.jpg" alt="Calculator Project" class="project-image">
+        <div class="project-content">
+          <h3>Calculator App</h3>
+          <p>A fully functional calculator built with HTML, CSS, and JavaScript. Features basic arithmetic operations and a clean, modern interface.</p>
+          <div class="project-tags">
+            <span class="project-tag">HTML</span>
+            <span class="project-tag">CSS</span>
+            <span class="project-tag">JavaScript</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link">
+              <i class="fas fa-external-link-alt"></i>
+              Live Demo
+            </a>
+            <a href="#" class="project-link">
+              <i class="fab fa-github"></i>
+              Source Code
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Notes Project -->
+      <div class="project-card">
+        <img src="images/notes.jpg" alt="Notes Project" class="project-image">
+        <div class="project-content">
+          <h3>Notes App</h3>
+          <p>A simple notes application that allows users to create, edit, and delete notes. Built with local storage for data persistence.</p>
+          <div class="project-tags">
+            <span class="project-tag">HTML</span>
+            <span class="project-tag">CSS</span>
+            <span class="project-tag">JavaScript</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link">
+              <i class="fas fa-external-link-alt"></i>
+              Live Demo
+            </a>
+            <a href="#" class="project-link">
+              <i class="fab fa-github"></i>
+              Source Code
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Portfolio Website -->
+      <div class="project-card">
+        <img src="images/portfolio.jpg" alt="Portfolio Website" class="project-image">
+        <div class="project-content">
+          <h3>Portfolio Website</h3>
+          <p>My personal portfolio website showcasing my projects, skills, and achievements. Built with modern design principles and responsive layout.</p>
+          <div class="project-tags">
+            <span class="project-tag">HTML</span>
+            <span class="project-tag">CSS</span>
+            <span class="project-tag">JavaScript</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link">
+              <i class="fas fa-external-link-alt"></i>
+              Live Demo
+            </a>
+            <a href="#" class="project-link">
+              <i class="fab fa-github"></i>
+              Source Code
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Category filter functionality
+    const categoryBtns = document.querySelectorAll('.category-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    categoryBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Remove active class from all buttons
+        categoryBtns.forEach(b => b.classList.remove('active'));
+        // Add active class to clicked button
+        btn.classList.add('active');
+
+        const category = btn.textContent.toLowerCase();
+        
+        projectCards.forEach(card => {
+          if (category === 'all' || card.querySelector('.project-tags').textContent.toLowerCase().includes(category)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
