@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta tags for character encoding and responsive viewport -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anthony's Portfolio</title>
+  
+  <!-- External CSS and Font imports -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Poppins for main text -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- Neon Tubes Font for special effects -->
+  <link href="https://fonts.cdnfonts.com/css/neon-tubes-2" rel="stylesheet">
+  <!-- Orbitron font for futuristic headings -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Dark theme variables */
+    :root {
+      --bg-primary: #1f1b2e;
+      --bg-secondary: rgba(22, 21, 33, 0.8);
+      --text-primary: #fff;
+      --text-secondary: rgba(255, 255, 255, 0.9);
+      --accent: #00f7ff;
+      --neon-glow: #00f7ff;
+      --purple-glow: rgba(147, 112, 219, 0.3);
+      --border-color: rgba(255, 255, 255, 0.05);
+    }
+
+    /* Light theme - remove ALL glowing effects */
+    [data-theme="light"] {
+      --bg-primary: #f0e6ff;
+      --bg-secondary: rgba(255, 255, 255, 0.85);
+      --text-primary: #2d2b38;
+      --text-secondary: rgba(45, 43, 56, 0.9);
+      --accent: #9370db;
+      --purple-glow: rgba(147, 112, 219, 0.2);
+      --border-color: rgba(147, 112, 219, 0.1);
+    }
+
+    /* Base body styles with space theme background */
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: url('images/download(2).jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: var(--text-primary);
+      font-family: 'Poppins', sans-serif;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    /* Dark overlay for better text readability */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bg-primary);
+      opacity: 0.95;
+      z-index: 0;
+      transition: all 0.3s ease;
+    }
+
+    /* Main content container with glass morphism effect */
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 3rem;
+      background: var(--bg-secondary);
+      border-radius: 25px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+      border: 1px solid var(--border-color);
+      max-width: 800px;
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    /* Quote section styling */
+    .quote-container {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      border-top: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+    }
+
+    .quote-text {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+
+    .quote-author {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.9rem;
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    /* Main title with neon glow effect */
+    .hero-content h1 {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-size: 4rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0 0 1rem 0;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    /* Dark theme neon effect */
+    :root .hero-content h1 {
+      text-shadow: 
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px var(--neon-glow),
+        0 0 82px var(--neon-glow),
+        0 0 92px var(--neon-glow),
+        0 0 102px var(--neon-glow),
+        0 0 151px var(--neon-glow);
+      animation: pulsate 1.5s infinite alternate;     
+    }
+
+    /* Light theme - remove ALL glowing effects */
+    [data-theme="light"] .hero-content h1 {
+      text-shadow: none;
+      animation: none;
+      color: var(--accent);
+    }
+
+    /* Pulsating animation for the dark theme neon effect */
+    @keyframes pulsate {
+      100% {
+        text-shadow: 
+          0 0 4px #fff,
+          0 0 11px #fff,
+          0 0 19px #fff,
+          0 0 40px var(--neon-glow),
+          0 0 80px var(--neon-glow),
+          0 0 90px var(--neon-glow),
+          0 0 100px var(--neon-glow),
+          0 0 150px var(--neon-glow);
+      }
+      0% {
+        text-shadow: 
+          0 0 2px #fff,
+          0 0 4px #fff,
+          0 0 6px #fff,
+          0 0 10px var(--neon-glow),
+          0 0 45px var(--neon-glow),
+          0 0 55px var(--neon-glow),
+          0 0 70px var(--neon-glow),
+          0 0 80px var(--neon-glow);
+      }
+    }
+
+    /* Subtitle styling */
+    .hero-content h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      margin: 1rem 0;
+      letter-spacing: 0.1em;
+      text-shadow: 0 0 10px var(--purple-glow);
+    }
+
+    /* Animated role text styling */
+    #animated-role {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: var(--text-secondary);
+      margin: 1rem 0 0 0;
+      letter-spacing: 0.2em;
+      opacity: 0.9;
+      text-shadow: 0 0 10px var(--purple-glow);
+    }
+
+    /* Navigation bar with glass morphism effect */
+    .navbar {
+      position: fixed;
+      top: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--bg-secondary);
+      backdrop-filter: blur(10px);
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+      border: 1px solid var(--border-color);
+      z-index: 100;
+    }
+
+    /* Navigation list styling */
+    .navbar ul {
+      display: flex;
+      gap: 3.5rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navigation links styling */
+    .navbar a {
+      color: var(--text-primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    /* Navigation hover effects */
+    .navbar a:hover {
+      background: rgba(147, 112, 219, 0.1);
+      transform: translateY(-2px);
+      box-shadow: 0 0 15px var(--purple-glow);
+    }
+
+    /* Navigation icons styling */
+    .navbar i {
+      font-size: 1.2rem;
+      color: var(--accent);
+    }
+
+    /* Theme switcher button */
+    .theme-switch {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 50%;
+      width: 3rem;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+      z-index: 100;
+      transition: all 0.3s ease;
+    }
+
+    .theme-switch:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 15px var(--purple-glow);
+    }
+
+    .theme-switch i {
+      font-size: 1.2rem;
+      color: var(--accent);
+      transition: all 0.3s ease;
+    }
+
+    /* Adjust hero padding to account for top navbar */
+    .hero {
+      padding-top: 15vh;
+      margin-bottom: 4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+      .navbar ul {
+        gap: 2rem;
+      }
+
+      .navbar a {
+        font-size: 0.9rem;
+        padding: 0.4rem;
+      }
+
+      .hero-content h1 {
+        font-size: 3rem;
+      }
+
+      .hero-content h2 {
+        font-size: 1.8rem;
+      }
+
+      #animated-role {
+        font-size: 1.5rem;
+      }
+
+      .theme-switch {
+        bottom: 6rem;
+        right: 1rem;
+      }
+    }
+
+    /* Light theme - remove ALL glowing effects */
+    [data-theme="light"] .hero-content h1 {
+      text-shadow: none;
+      animation: none;
+      color: var(--accent);
+    }
+
+    [data-theme="light"] .hero-content p {
+      text-shadow: none;
+      color: var(--text-secondary);
+    }
+
+    [data-theme="light"] .project-card {
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(147, 112, 219, 0.2);
+    }
+
+    [data-theme="light"] .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: none;
+      border-color: var(--accent);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    [data-theme="light"] .project-card h3 {
+      color: var(--text-primary);
+      text-shadow: none;
+    }
+
+    [data-theme="light"] .project-card p {
+      color: var(--text-secondary);
+    }
+
+    [data-theme="light"] .project-card .tech-stack {
+      color: var(--accent);
+    }
+
+    [data-theme="light"] .navbar {
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    [data-theme="light"] .navbar a:hover {
+      background: rgba(147, 112, 219, 0.1);
+      transform: translateY(-2px);
+      box-shadow: none;
+    }
+
+    [data-theme="light"] .theme-switch {
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    [data-theme="light"] .theme-switch:hover {
+      transform: translateY(-2px);
+      box-shadow: none;
+    }
+
+    [data-theme="light"] .social-links a {
+      color: var(--accent);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(147, 112, 219, 0.2);
+    }
+
+    [data-theme="light"] .social-links a:hover {
+      transform: translateY(-2px);
+      box-shadow: none;
+      background: rgba(147, 112, 219, 0.1);
+    }
+
+    [data-theme="light"] .section-title {
+      color: var(--accent);
+      text-shadow: none;
+    }
+
+    [data-theme="light"] .skill-card {
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(147, 112, 219, 0.2);
+    }
+
+    [data-theme="light"] .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: none;
+      border-color: var(--accent);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    [data-theme="light"] .skill-card i {
+      color: var(--accent);
+      text-shadow: none;
+    }
+
+    [data-theme="light"] .skill-card h3 {
+      color: var(--text-primary);
+    }
+
+    [data-theme="light"] .skill-card p {
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+<body>
+  <!-- Main hero section -->
+  <div class="hero-content">
+    <h1>Anthony</h1>
+    <h2>Welcome to My Portfolio</h2>
+    <div id="animated-role"></div>
+    <div class="quote-container">
+      <p class="quote-text" id="quote-text"></p>
+      <p class="quote-author" id="quote-author"></p>
+    </div>
+  </div>
+  
+  <!-- Navigation bar -->
+  <nav class="navbar">
+    <ul>
+      <li>
+        <a href="aboutme.html">
+          <i class="fas fa-user"></i>
+          About Me
+        </a>
+      </li>
+      <li>
+        <a href="projects.html">
+          <i class="fas fa-code"></i>
+          Projects
+        </a>
+      </li>
+      <li>
+        <a href="school.html">
+          <i class="fas fa-graduation-cap"></i>
+          School
+        </a>
+      </li>
+      <li>
+        <a href="contact.html">
+          <i class="fas fa-envelope"></i>
+          Contact
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Theme switcher -->
+  <button class="theme-switch" aria-label="Toggle theme">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <script>
+    // Typing animation configuration
+    const roleElement = document.getElementById('animated-role');
+    const roles = ['Novice Software Engineer', 'Web Developer', 'Problem Solver', 'Quick Learner'];
+    let currentRoleIndex = 0;
+    let currentText = '';
+    let isDeleting = false;
+    
+    // Animation timing settings
+    const settings = {
+      typeSpeed: 200,
+      deleteSpeed: 200,
+      pauseBeforeDelete: 2000,
+      pauseBeforeNext: 1000,
+      initialDelay: 1000
+    };
+
+    // Helper function for timing
+    function sleep(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    // Main typing animation function
+    async function typeEffect() {
+      while (true) {
+        for (let role of roles) {
+          for (let i = 0; i <= role.length; i++) {
+            currentText = role.substring(0, i);
+            roleElement.textContent = currentText;
+            await sleep(settings.typeSpeed);
+          }
+
+          await sleep(settings.pauseBeforeDelete);
+
+          for (let i = role.length; i >= 0; i--) {
+            currentText = role.substring(0, i);
+            roleElement.textContent = currentText;
+            await sleep(settings.deleteSpeed);
+          }
+
+          await sleep(settings.pauseBeforeNext);
+        }
+      }
+    }
+
+    // Start the typing animation after initial delay
+    setTimeout(() => {
+      typeEffect();
+    }, settings.initialDelay);
+
+    // Theme switcher functionality
+    const themeSwitch = document.querySelector('.theme-switch');
+    const themeIcon = themeSwitch.querySelector('i');
+    
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      themeIcon.className = savedTheme === 'light' ? 'fas fa-sun' : 'fas fa-moon';
+    }
+
+    // Theme switch event handler
+    themeSwitch.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      themeIcon.className = newTheme === 'light' ? 'fas fa-sun' : 'fas fa-moon';
+    });
+
+    // Tech and Entrepreneur Quotes
+    const quotes = [
+      {
+        text: "Innovation distinguishes between a leader and a follower.",
+        author: "Steve Jobs"
+      },
+      {
+        text: "The best way to predict the future is to create it.",
+        author: "Peter Drucker"
+      },
+      {
+        text: "Code is like humor. When you have to explain it, it's bad.",
+        author: "Cory House"
+      },
+      {
+        text: "The only way to do great work is to love what you do.",
+        author: "Steve Jobs"
+      },
+      {
+        text: "Every great developer you know got there by solving problems they were unqualified to solve until they actually did it.",
+        author: "Patrick McKenzie"
+      },
+      {
+        text: "The future belongs to those who believe in the beauty of their dreams.",
+        author: "Eleanor Roosevelt"
+      },
+      {
+        text: "First, solve the problem. Then, write the code.",
+        author: "John Johnson"
+      },
+      {
+        text: "Technology is best when it brings people together.",
+        author: "Matt Mullenweg"
+      },
+      {
+        text: "Any sufficiently advanced technology is indistinguishable from magic.",
+        author: "Arthur C. Clarke"
+      },
+      {
+        text: "The technology you use impresses no one. The experience you create with it is everything.",
+        author: "Sean Gerety"
+      }
+    ];
+
+    // Function to display a random quote
+    function displayRandomQuote() {
+      const quoteText = document.getElementById('quote-text');
+      const quoteAuthor = document.getElementById('quote-author');
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      const quote = quotes[randomIndex];
+      
+      quoteText.textContent = `"${quote.text}"`;
+      quoteAuthor.textContent = `- ${quote.author}`;
+    }
+
+    // Display initial quote
+    displayRandomQuote();
+
+    // Change quote every 10 seconds
+    setInterval(displayRandomQuote, 10000);
+  </script>
+</body>
+</html>
