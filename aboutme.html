@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -597,3 +598,604 @@
   </script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta tags for character encoding and responsive viewport -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me - Anthony's Portfolio</title>
+  
+  <!-- External CSS and Font imports -->
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <style>
+    /* Dark theme variables */
+    :root {
+      --bg-primary: #1f1b2e;
+      --bg-secondary: rgba(22, 21, 33, 0.8);
+      --text-primary: #fff;
+      --text-secondary: rgba(255, 255, 255, 0.9);
+      --accent: #00f7ff;
+      --neon-glow: #00f7ff;
+      --purple-glow: rgba(147, 112, 219, 0.3);
+      --border-color: rgba(255, 255, 255, 0.05);
+    }
+
+    /* Light theme variables */
+    [data-theme="light"] {
+      --bg-primary: #F8F6E9;  /* Pastel Cream */
+      --bg-secondary: rgba(255, 255, 255, 0.85);
+      --text-primary: #2d2b38;
+      --text-secondary: #4a4759;
+      --accent: #C5A3FF;  /* Pastel Mauve */
+      --neon-glow: #B4D4C3;  /* Pastel Sage */
+      --purple-glow: rgba(197, 163, 255, 0.3);  /* Pastel Mauve with opacity */
+      --border-color: rgba(180, 212, 195, 0.2);  /* Pastel Sage with opacity */
+    }
+
+    /* Base body styles with space theme background */
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: url('images/download(2).jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: var(--text-primary);
+      font-family: 'Poppins', sans-serif;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    /* Dark overlay for better text readability */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bg-primary);
+      opacity: 0.95;
+      z-index: 0;
+      transition: all 0.3s ease;
+    }
+
+    /* Hero section layout */
+    .hero {
+      padding-top: 10vh;
+      margin-bottom: 4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Hero content container with glass morphism */
+    .hero-content {
+      position: relative;
+      text-align: center;
+      padding: 2rem;
+      background: var(--bg-secondary);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+      border: 1px solid var(--border-color);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Main title with neon glow effect */
+    .hero-content h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0 0 1rem 0;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    /* Dark theme neon effect */
+    :root .hero-content h1 {
+      text-shadow: 
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42k var(--neon-glow),
+        0 0 82k var(--neon-glow),
+        0 0 92k var(--neon-glow),
+        0 0 102k var(--neon-glow),
+        0 0 151k var(--neon-glow);
+      animation: pulsate 1.5s infinite alternate;     
+    }
+
+    /* Light theme - pastel neon effect */
+    [data-theme="light"] .hero-content h1 {
+      color: var(--text-primary);
+      text-shadow: 
+        0 0 7px var(--text-primary),
+        0 0 10px var(--text-primary),
+        0 0 21k var(--neon-glow),
+        0 0 42k var(--neon-glow),
+        0 0 82k var(--neon-glow),
+        0 0 92k var(--neon-glow),
+        0 0 102k var(--neon-glow),
+        0 0 151k var(--neon-glow);
+      animation: pulsate-light 2s infinite alternate;
+    }
+
+    /* Pulsating animation for the neon effect */
+    @keyframes pulsate {
+      100% {
+        text-shadow: 
+          0 0 4px #fff,
+          0 0 11px #fff,
+          0 0 19px #fff,
+          0 0 40k #00f7ff,
+          0 0 80k #00f7ff,
+          0 0 90k #00f7ff,
+          0 0 100k #00f7ff,
+          0 0 150k #00f7ff;
+      }
+      0% {
+        text-shadow: 
+          0 0 2px #fff,
+          0 0 4px #fff,
+          0 0 6px #fff,
+          0 0 10k #00f7ff,
+          0 0 45k #00f7ff,
+          0 0 55k #00f7ff,
+          0 0 70k #00f7ff,
+          0 0 80k #00f7ff;
+      }
+    }
+
+    @keyframes pulsate-light {
+      100% {
+        text-shadow: 
+          0 0 4px var(--text-primary),
+          0 0 11px var(--text-primary),
+          0 0 19k var(--neon-glow),
+          0 0 40k var(--neon-glow),
+          0 0 80k var(--neon-glow),
+          0 0 90k var(--neon-glow),
+          0 0 100k var(--neon-glow),
+          0 0 150k var(--neon-glow);
+      }
+      0% {
+        text-shadow: 
+          0 0 2px var(--text-primary),
+          0 0 4px var(--text-primary),
+          0 0 6k var(--neon-glow),
+          0 0 10k var(--neon-glow),
+          0 0 45k var(--neon-glow),
+          0 0 55k var(--neon-glow),
+          0 0 70k var(--neon-glow),
+          0 0 80k var(--neon-glow);
+      }
+    }
+
+    /* Subheading styling */
+    .hero h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.9);
+      letter-spacing: 0.1em;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Navigation bar styling */
+    .navbar {
+      position: fixed;
+      top: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--bg-secondary);
+      backdrop-filter: blur(10px);
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+      border: 1px solid var(--border-color);
+      z-index: 100;
+    }
+
+    .navbar i {
+      font-size: 1.2rem;
+      color: var(--accent);
+    }
+
+    .navbar ul {
+      display: flex;
+      gap: 3rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar a {
+      color: var(--text-primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .navbar a:hover {
+      background: rgba(147, 112, 219, 0.1);
+      transform: translateY(-2px);
+      box-shadow: 0 0 15px var(--purple-glow);
+    }
+
+    /* About section container */
+    .about-container {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: var(--bg-secondary);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+      border: 1px solid var(--border-color);
+    }
+
+    /* Two-column layout for about content */
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    /* Story section styling */
+    .story-section {
+      padding: 2rem;
+      background: rgba(16, 14, 37, 0.5);
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .story-section h2 {
+      font-family: 'Orbitron', sans-serif;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 10px var(--purple-glow);
+    }
+
+    .story-section p {
+      margin-bottom: 1rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+    }
+
+    /* Image slider container */
+    .image-slider {
+      position: relative;
+      height: 400px;
+      overflow: hidden;
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    }
+
+    /* Individual slide styling */
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .slider-controls {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 10px;
+    }
+
+    .slider-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .slider-dot.active {
+      background: white;
+    }
+
+    /* Skills section styling */
+    .skills-section {
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    .skills-section h2 {
+      font-family: 'Orbitron', sans-serif;
+      color: var(--accent);
+      margin-bottom: 2rem;
+      text-shadow: 0 0 10px var(--purple-glow);
+    }
+
+    /* Skills grid layout */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    /* Individual skill card styling */
+    .skill-card {
+      background: rgba(16, 14, 37, 0.5);
+      padding: 1.5rem;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(0, 247, 255, 0.2);
+      border-color: rgba(0, 247, 255, 0.3);
+    }
+
+    .skill-card i {
+      font-size: 2rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px var(--purple-glow);
+    }
+
+    .skill-card h3 {
+      font-family: 'Orbitron', sans-serif;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-card p {
+      color: var(--text-secondary);
+    }
+
+    /* Theme switcher button */
+    .theme-switch {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 50%;
+      width: 3rem;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+      z-index: 100;
+      transition: all 0.3s ease;
+    }
+
+    .theme-switch:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 15px var(--purple-glow);
+    }
+
+    .theme-switch i {
+      font-size: 1.2rem;
+      color: var(--accent);
+      transition: all 0.3s ease;
+    }
+
+    /* Responsive design adjustments */
+    @media (max-width: 768px) {
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .navbar ul {
+        gap: 1.5rem;
+      }
+
+      .navbar a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+      }
+
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+
+      .theme-switch {
+        bottom: 6rem;
+        right: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>About Me</h1>
+      <h2>My Journey</h2>
+    </div>
+  </header>
+
+  <!-- Navigation bar -->
+  <nav class="navbar">
+    <ul>
+      <li>
+        <a href="index.html">
+          <i class="fas fa-home"></i>
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="projects.html">
+          <i class="fas fa-code"></i>
+          Projects
+        </a>
+      </li>
+      <li>
+        <a href="school.html">
+          <i class="fas fa-graduation-cap"></i>
+          School
+        </a>
+      </li>
+      <li>
+        <a href="contact.html">
+          <i class="fas fa-envelope"></i>
+          Contact
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Main content container -->
+  <div class="about-container">
+    <div class="about-content">
+      <!-- Personal story section -->
+      <div class="story-section">
+        <h2>My Story</h2>
+        <p>I left Cuba at the age of 7 and quickly adapted to my new environment, becoming fluent in English. This early experience of adaptation and learning has shaped my approach to problem-solving and my passion for technology.</p>
+        <p>As a fast learner, I've already mastered HTML and CSS, and I'm currently expanding my knowledge in Python. While I'm still developing my programming skills, I'm confident in my ability to learn any programming language with the right guidance.</p>
+        <p>My journey in software engineering is just beginning, but my determination and quick learning ability are my greatest assets. I believe that with dedication and the right opportunities, I can achieve great things in this field.</p>
+      </div>
+
+      <!-- Image slider section -->
+      <div class="image-slider">
+        <div class="slide active">
+          <img src="images/cuba.jpg" alt="Cuba">
+        </div>
+        <div class="slide">
+          <img src="images/coding.jpg" alt="Coding">
+        </div>
+        <div class="slide">
+          <img src="images/learning.jpg" alt="Learning">
+        </div>
+        <div class="slider-controls">
+          <div class="slider-dot active"></div>
+          <div class="slider-dot"></div>
+          <div class="slider-dot"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Skills section -->
+    <div class="skills-section">
+      <h2>My Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <i class="fab fa-html5"></i>
+          <h3>HTML5</h3>
+          <p>Advanced</p>
+        </div>
+        <div class="skill-card">
+          <i class="fab fa-css3-alt"></i>
+          <h3>CSS3</h3>
+          <p>Advanced</p>
+        </div>
+        <div class="skill-card">
+          <i class="fab fa-js"></i>
+          <h3>JavaScript</h3>
+          <p>Intermediate</p>
+        </div>   
+        <div class="skill-card">
+          <i class="fab fa-python"></i>
+          <h3>Python</h3>
+          <p>Learning</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Theme switcher -->
+  <button class="theme-switch" aria-label="Toggle theme">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <script>
+    // Image slider functionality
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.slider-dot');
+    let currentSlide = 0;
+
+    // Function to show selected slide
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+      
+      slides[index].classList.add('active');
+      dots[index].classList.add('active');
+    }
+
+    // Function to advance to next slide
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    // Add click events to slider dots
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentSlide = index;
+        showSlide(currentSlide);
+      });
+    });
+
+    // Auto advance slides
+    setInterval(nextSlide, 5000);
+
+    // Theme switcher functionality
+    const themeSwitch = document.querySelector('.theme-switch');
+    const themeIcon = themeSwitch.querySelector('i');
+    
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      themeIcon.className = savedTheme === 'light' ? 'fas fa-sun' : 'fas fa-moon';
+    }
+
+    // Theme switch event handler
+    themeSwitch.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      themeIcon.className = newTheme === 'light' ? 'fas fa-sun' : 'fas fa-moon';
+    });
+  </script>
+</body>
+</html>
+>>>>>>> 5300ce23d26cc7e2ce512c810b839b528afc089e

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -1039,3 +1040,970 @@
   </script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>School - Anthony's Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    /* Dark theme variables */
+    :root {
+      --bg-primary: #1f1b2e;
+      --bg-secondary: rgba(22, 21, 33, 0.8);
+      --text-primary: #fff;
+      --text-secondary: rgba(255, 255, 255, 0.9);
+      --accent: #00f7ff;
+      --purple-glow: rgba(147, 112, 219, 0.3);
+      --border-color: rgba(255, 255, 255, 0.05);
+    }
+
+    /* Light theme variables */
+    [data-theme="light"] {
+      --bg-primary: #f0e6ff;
+      --bg-secondary: rgba(255, 255, 255, 0.85);
+      --text-primary: #2d2b38;
+      --text-secondary: rgba(45, 43, 56, 0.9);
+      --accent: #9370db;
+      --purple-glow: rgba(147, 112, 219, 0.2);
+      --border-color: rgba(147, 112, 219, 0.1);
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background: url('images/download(2).jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: var(--text-primary);
+      font-family: 'Poppins', sans-serif;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bg-primary);
+      opacity: 0.95;
+      z-index: 0;
+      transition: all 0.3s ease;
+    }
+
+    .hero {
+      padding-top: 15vh;
+      margin-bottom: 4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      text-align: center;
+      padding: 2rem;
+      background: var(--bg-secondary);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+      border: 1px solid var(--border-color);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* Main title with neon glow effect */
+    .hero-content h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 0 0 1rem 0;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    /* Dark theme neon effect */
+    :root .hero-content h1 {
+      text-shadow: 
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #00f7ff,
+        0 0 82px #00f7ff,
+        0 0 92px #00f7ff,
+        0 0 102px #00f7ff,
+        0 0 151px #00f7ff;
+      animation: pulsate 1.5s infinite alternate;     
+    }
+
+    /* Light theme - remove ALL glowing effects */
+    [data-theme="light"] {
+      --bg-primary: #f0e6ff;
+      --bg-secondary: rgba(255, 255, 255, 0.85);
+      --text-primary: #2d2b38;
+      --text-secondary: rgba(45, 43, 56, 0.9);
+      --accent: #9370db;
+      --purple-glow: rgba(147, 112, 219, 0.2);
+      --border-color: rgba(147, 112, 219, 0.1);
+    }
+
+    [data-theme="light"] .hero-content h1 {
+      text-shadow: none;
+      animation: none;
+      color: var(--accent);
+    }
+
+    [data-theme="light"] .school-header h1,
+    [data-theme="light"] .achievements-section h2,
+    [data-theme="light"] .grades-header h2,
+    [data-theme="light"] .chart-wrapper h3 {
+      text-shadow: none;
+    }
+
+    [data-theme="light"] .achievement-card {
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(147, 112, 219, 0.2);
+    }
+
+    [data-theme="light"] .achievement-card:hover {
+      transform: translateY(-5px);
+      box-shadow: none;
+      border-color: var(--accent);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    [data-theme="light"] .achievement-card i {
+      text-shadow: none;
+      color: var(--accent);
+    }
+
+    [data-theme="light"] .achievement-card h3 {
+      color: var(--text-primary);
+    }
+
+    [data-theme="light"] .achievement-card p {
+      color: var(--text-secondary);
+    }
+
+    [data-theme="light"] .grades-section,
+    [data-theme="light"] .achievements-section {
+      background: rgba(255, 255, 255, 0.7);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    [data-theme="light"] .chart-wrapper {
+      background: rgba(255, 255, 255, 0.7);
+      box-shadow: none;
+    }
+
+    [data-theme="light"] .grade-controls .btn,
+    [data-theme="light"] .quarter-controls .btn {
+      border: 2px solid var(--accent);
+      color: var(--accent);
+      background: rgba(255, 255, 255, 0.7);
+      box-shadow: none;
+    }
+
+    [data-theme="light"] .grade-controls .btn:hover,
+    [data-theme="light"] .quarter-controls .btn:hover,
+    [data-theme="light"] .grade-controls .btn.active,
+    [data-theme="light"] .quarter-controls .btn.active {
+      background: rgba(147, 112, 219, 0.1);
+      box-shadow: none;
+      transform: translateY(-2px);
+    }
+
+    [data-theme="light"] .navbar {
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    [data-theme="light"] .navbar a:hover {
+      background: rgba(147, 112, 219, 0.1);
+      transform: translateY(-2px);
+      box-shadow: none;
+    }
+
+    [data-theme="light"] .theme-switch {
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    [data-theme="light"] .theme-switch:hover {
+      transform: translateY(-2px);
+      box-shadow: none;
+    }
+
+    .school-header h1 {
+      font-family: 'Orbitron', sans-serif;
+      color: var(--accent);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+    }
+
+    .achievements-section h2,
+    .grades-header h2 {
+      font-family: 'Orbitron', sans-serif;
+      color: var(--accent);
+      text-align: center;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+    }
+
+    .chart-wrapper h3 {
+      font-family: 'Orbitron', sans-serif;
+      color: var(--accent);
+      text-align: center;
+      margin: 0 0 0.2rem 0;
+      text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+      font-size: 1.2rem;
+    }
+
+    .school-container {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: var(--bg-secondary);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+      border: 1px solid var(--border-color);
+    }
+
+    .school-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .school-header h1 {
+      font-family: 'Orbitron', sans-serif;
+      color: #00f7ff;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+    }
+
+    .achievements-section {
+      background: rgba(16, 14, 37, 0.7);
+      border-radius: 20px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .achievements-section h2 {
+      font-family: 'Orbitron', sans-serif;
+      color: #00f7ff;
+      text-align: center;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+    }
+
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .achievement-card {
+      background: rgba(16, 14, 37, 0.5);
+      padding: 1.5rem;
+      border-radius: 15px;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .achievement-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(0, 247, 255, 0.2);
+      border-color: rgba(0, 247, 255, 0.3);
+    }
+
+    .achievement-card i {
+      font-size: 2.5rem;
+      color: #00f7ff;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+    }
+
+    .achievement-card h3 {
+      font-family: 'Orbitron', sans-serif;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .achievement-card p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+    }
+
+    .grades-section {
+      background: rgba(16, 14, 37, 0.7);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      margin-bottom: 2rem;
+    }
+
+    .grades-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .grades-header h2 {
+      font-family: 'Orbitron', sans-serif;
+      color: #00f7ff;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+    }
+
+    .grade-controls, .quarter-controls {
+      display: flex;
+      justify-content: center;
+      gap: 0.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .grade-controls .btn, .quarter-controls .btn {
+      background: rgba(16, 14, 37, 0.5);
+      border: 2px solid #00f7ff;
+      color: #00f7ff;
+      padding: 0.5rem 1.5rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .grade-controls .btn:hover, .quarter-controls .btn:hover,
+    .grade-controls .btn.active, .quarter-controls .btn.active {
+      background: rgba(0, 247, 255, 0.1);
+      box-shadow: 0 0 15px rgba(0, 247, 255, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .quarter-controls .btn {
+      padding: 0.4rem 1.2rem;
+      font-size: 0.8rem;
+    }
+
+    .charts-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .charts-container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .chart-wrapper {
+      background: rgba(16, 14, 37, 0.5);
+      padding: 1.5rem 1.5rem 1.8rem;
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      height: 520px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chart-wrapper h3 {
+      font-family: 'Orbitron', sans-serif;
+      color: #00f7ff;
+      text-align: center;
+      margin: 0 0 0.2rem 0;
+      text-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+      font-size: 1.2rem;
+    }
+
+    .chart-wrapper canvas {
+      flex: 1;
+      max-height: calc(100% - 40px);
+      margin-top: 0;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--bg-secondary);
+      backdrop-filter: blur(10px);
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+      border: 1px solid var(--border-color);
+      z-index: 100;
+    }
+
+    .navbar ul {
+      display: flex;
+      gap: 3rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar a {
+      color: var(--text-primary);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .navbar a:hover {
+      background: rgba(147, 112, 219, 0.1);
+      transform: translateY(-2px);
+      box-shadow: 0 0 15px var(--purple-glow);
+    }
+
+    .navbar i {
+      font-size: 1.2rem;
+      color: var(--accent);
+    }
+
+    /* Theme switcher button */
+    .theme-switch {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-color);
+      border-radius: 50%;
+      width: 3rem;
+      height: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+      z-index: 100;
+      transition: all 0.3s ease;
+    }
+
+    .theme-switch:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 15px var(--purple-glow);
+    }
+
+    .theme-switch i {
+      font-size: 1.2rem;
+      color: var(--accent);
+      transition: all 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+      .achievements-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .navbar ul {
+        gap: 1.5rem;
+      }
+
+      .navbar a {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+      }
+
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+
+      .theme-switch {
+        bottom: 6rem;
+        right: 1rem;
+      }
+
+      .grade-controls, .quarter-controls {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .grade-controls .btn, .quarter-controls .btn {
+        padding: 0.4rem 1rem;
+        font-size: 0.8rem;
+      }
+    }
+
+    @keyframes pulsate {
+      100% {
+        text-shadow: 
+          0 0 4px #fff,
+          0 0 11px #fff,
+          0 0 19px #fff,
+          0 0 40px #00f7ff,
+          0 0 80px #00f7ff,
+          0 0 90px #00f7ff,
+          0 0 100px #00f7ff,
+          0 0 150px #00f7ff;
+      }
+      0% {
+        text-shadow: 
+          0 0 2px #fff,
+          0 0 4px #fff,
+          0 0 6px #fff,
+          0 0 10px #00f7ff,
+          0 0 45px #00f7ff,
+          0 0 55px #00f7ff,
+          0 0 70px #00f7ff,
+          0 0 80px #00f7ff;
+      }
+    }
+
+    /* Add these styles for the shaking animation and coming soon text */
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      75% { transform: translateX(5px); }
+    }
+
+    .shake-animation {
+      animation: shake 0.5s infinite;
+      position: relative;
+    }
+
+    .coming-soon-text {
+      position: absolute;
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: var(--bg-primary);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.7rem;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .coming-soon-text::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 5px solid var(--accent);
+    }
+
+    .shake-animation .coming-soon-text {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-content">
+      <h1>School</h1>
+    </div>
+  </div>
+
+  <div class="school-container">
+    <div class="achievements-section">
+      <h2>My Achievements</h2>
+      <div class="achievements-grid">
+        <div class="achievement-card">
+          <i class="fas fa-certificate"></i>
+          <h3>Industry Certification</h3>
+          <p>HTML and CSS Certification</p>
+        </div>
+        <div class="achievement-card">
+          <i class="fas fa-trophy"></i>
+          <h3>Smart Kids Trophy</h3>
+          <p>Academic Excellence Award</p>
+        </div>
+        <div class="achievement-card">
+          <i class="fas fa-code"></i>
+          <h3>Programming Skills</h3>
+          <p>JavaScript, Python, HTML, CSS</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="grades-section">
+      <div class="grades-header">
+        <h2>My Grades</h2>
+        <div class="grade-controls">
+          <button class="btn btn-primary" onclick="updateGrades('6')">6th Grade</button>
+          <button class="btn btn-primary" onclick="updateGrades('7')">7th Grade</button>
+          <button class="btn btn-primary" onclick="updateGrades('8')">8th Grade</button>
+        </div>
+      </div>
+      <div class="charts-container">
+        <div class="chart-wrapper">
+          <h3>Overall Grades</h3>
+          <div class="quarter-controls">
+            <button class="btn btn-primary" onclick="updateQuarter('Q1')">Q1</button>
+            <button class="btn btn-primary" onclick="updateQuarter('Q2')">Q2</button>
+            <button class="btn btn-primary" onclick="updateQuarter('Q3')">Q3</button>
+            <button class="btn btn-primary" onclick="updateQuarter('Q4')">Q4</button>
+          </div>
+          <canvas id="gradesChart"></canvas>
+        </div>
+        <div class="chart-wrapper">
+          <h3>Web Design Grades</h3>
+          <canvas id="webDesignChart"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <ul>
+      <li>
+        <a href="index.html">
+          <i class="fas fa-home"></i>
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="aboutme.html">
+          <i class="fas fa-user"></i>
+          About Me
+        </a>
+      </li>
+      <li>
+        <a href="projects.html">
+          <i class="fas fa-code"></i>
+          Projects
+        </a>
+      </li>
+      <li>
+        <a href="contact.html">
+          <i class="fas fa-envelope"></i>
+          Contact
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Theme switcher -->
+  <button class="theme-switch" aria-label="Toggle theme">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <script>
+    // Overall grades data with quarters
+    const gradeData = {
+      '6': {
+        'Q1': [88, 99, 86, 96],
+        'Q2': [100, 90, 92, 92],
+        'Q3': [97, 91, 93, 91],
+        'Q4': [97, 90, 90, 92]
+      },
+      '7': {
+        'Q1': [99, 91, 91, 99],
+        'Q2': [85, 80, 88, 94],
+        'Q3': [84, 90, 91, 91],
+        'Q4': [84, 93, 85, 95]
+      },
+      '8': {
+        'Q1': [90, 95, 92, 97],
+        'Q2': [91, 96, 93, 98],
+        'Q3': [89, 94, 91, 96],
+        'Q4': [92, 97, 94, 99]
+      }
+    };
+
+    // Web design grades data (from OR CAR&TEC OCCS & CP for 6th and OR TO CAREER CLUST for 7th)
+    const webDesignData = {
+      '6': [100, 100, 95, 91],
+      '7': [90, 80, 80, 82],
+      '8': [97, 100, 98, 0]
+    };
+
+    const subjects = ['Math', 'Lang Arts', 'Science', 'Civics'];
+    let currentYear = '6';
+    let currentQuarter = 'Q1';
+
+    // Initialize overall grades chart
+    const ctx = document.getElementById('gradesChart').getContext('2d');
+    let gradesChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: subjects,
+        datasets: [{
+          label: '6th Grade Grades - Q1',
+          data: gradeData['6']['Q1'],
+          backgroundColor: document.documentElement.getAttribute('data-theme') === 'light' 
+            ? 'rgba(147, 112, 219, 0.5)'
+            : 'rgba(0, 247, 255, 0.5)',
+          borderColor: document.documentElement.getAttribute('data-theme') === 'light'
+            ? '#9370db'
+            : '#00f7ff',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        layout: {
+          padding: {
+            top: 10,
+            right: 20,
+            bottom: 10,
+            left: 10
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 100,
+            grid: {
+              color: document.documentElement.getAttribute('data-theme') === 'light'
+                ? 'rgba(147, 112, 219, 0.1)'
+                : 'rgba(255, 255, 255, 0.1)'
+            },
+            ticks: {
+              color: document.documentElement.getAttribute('data-theme') === 'light'
+                ? '#2d2b38'
+                : '#fff',
+              font: {
+                size: 14
+              }
+            }
+          },
+          x: {
+            grid: {
+              color: document.documentElement.getAttribute('data-theme') === 'light'
+                ? 'rgba(147, 112, 219, 0.1)'
+                : 'rgba(255, 255, 255, 0.1)'
+            },
+            ticks: {
+              color: document.documentElement.getAttribute('data-theme') === 'light'
+                ? '#2d2b38'
+                : '#fff',
+              font: {
+                size: 14
+              }
+            }
+          }
+        },
+        plugins: {
+          legend: {
+            labels: {
+              color: document.documentElement.getAttribute('data-theme') === 'light'
+                ? '#2d2b38'
+                : '#fff',
+              font: {
+                size: 14
+              },
+              padding: 10
+            },
+            position: 'top'
+          }
+        }
+      }
+    });
+
+    // Initialize web design grades chart
+    const webDesignCtx = document.getElementById('webDesignChart').getContext('2d');
+    let webDesignChart = new Chart(webDesignCtx, {
+      type: 'bar',
+      data: {
+        labels: ['Quarter 1', 'Quarter 2', 'Quarter 3', 'Quarter 4'],
+        datasets: [{
+          label: '6th Grade Web Design',
+          data: webDesignData['6'],
+          backgroundColor: document.documentElement.getAttribute('data-theme') === 'light'
+            ? 'rgba(147, 112, 219, 0.5)'
+            : 'rgba(147, 112, 219, 0.5)',
+          borderColor: document.documentElement.getAttribute('data-theme') === 'light'
+            ? '#9370db'
+            : '#9370db',
+          borderWidth: 1,
+          barPercentage: 0.6,
+          categoryPercentage: 0.8
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        layout: {
+          padding: {
+            top: 10,
+            right: 25,
+            bottom: 10,
+            left: 25
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 100,
+            grid: {
+              color: document.documentElement.getAttribute('data-theme') === 'light'
+                ? 'rgba(147, 112, 219, 0.1)'
+                : 'rgba(255, 255, 255, 0.1)'
+            },
+            ticks: {
+              color: document.documentElement.getAttribute('data-theme') === 'light'
+                ? '#2d2b38'
+                : '#fff',
+              font: {
+                size: 14
+              }
+            }
+          },
+          x: {
+            grid: {
+              color: document.documentElement.getAttribute('data-theme') === 'light'
+                ? 'rgba(147, 112, 219, 0.1)'
+                : 'rgba(255, 255, 255, 0.1)'
+            },
+            ticks: {
+              color: document.documentElement.getAttribute('data-theme') === 'light'
+                ? '#2d2b38'
+                : '#fff',
+              font: {
+                size: 14
+              }
+            }
+          }
+        },
+        plugins: {
+          legend: {
+            labels: {
+              color: document.documentElement.getAttribute('data-theme') === 'light'
+                ? '#2d2b38'
+                : '#fff',
+              font: {
+                size: 14
+              },
+              padding: 10
+            },
+            position: 'top'
+          }
+        }
+      }
+    });
+
+    function updateGrades(year) {
+      currentYear = year;
+      gradesChart.data.datasets[0].data = gradeData[year][currentQuarter];
+      gradesChart.data.datasets[0].label = `${year}th Grade Grades - ${currentQuarter}`;
+      gradesChart.update();
+
+      webDesignChart.data.datasets[0].data = webDesignData[year];
+      webDesignChart.data.datasets[0].label = `${year}th Grade Web Design`;
+      webDesignChart.update();
+
+      // Remove shake animation and coming soon text when switching grades
+      const q4Button = document.querySelector('.quarter-controls button:last-child');
+      q4Button.classList.remove('shake-animation');
+      const comingSoonText = q4Button.querySelector('.coming-soon-text');
+      if (comingSoonText) {
+        comingSoonText.remove();
+      }
+    }
+
+    function updateQuarter(quarter) {
+      // Add shake animation and coming soon text when clicking Q4 in 8th grade
+      if (currentYear === '8' && quarter === 'Q4') {
+        const q4Button = document.querySelector('.quarter-controls button:last-child');
+        if (!q4Button.querySelector('.coming-soon-text')) {
+          const comingSoonText = document.createElement('span');
+          comingSoonText.className = 'coming-soon-text';
+          comingSoonText.textContent = 'Coming Soon!';
+          q4Button.appendChild(comingSoonText);
+        }
+        q4Button.classList.add('shake-animation');
+        
+        // Stop the animation and remove the text after 3 seconds
+        setTimeout(() => {
+          q4Button.classList.remove('shake-animation');
+          const comingSoonText = q4Button.querySelector('.coming-soon-text');
+          if (comingSoonText) {
+            comingSoonText.remove();
+          }
+        }, 3000);
+        
+        return;
+      }
+      
+      currentQuarter = quarter;
+      gradesChart.data.datasets[0].data = gradeData[currentYear][quarter];
+      gradesChart.data.datasets[0].label = `${currentYear}th Grade Grades - ${quarter}`;
+      gradesChart.update();
+    }
+
+    // Theme switcher functionality
+    const themeSwitch = document.querySelector('.theme-switch');
+    const themeIcon = themeSwitch.querySelector('i');
+    
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      themeIcon.className = savedTheme === 'light' ? 'fas fa-sun' : 'fas fa-moon';
+    }
+
+    // Theme switch event handler
+    themeSwitch.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      themeIcon.className = newTheme === 'light' ? 'fas fa-sun' : 'fas fa-moon';
+
+      // Update chart colors
+      const isLight = newTheme === 'light';
+      
+      // Update overall grades chart
+      gradesChart.data.datasets[0].backgroundColor = isLight ? 'rgba(147, 112, 219, 0.5)' : 'rgba(0, 247, 255, 0.5)';
+      gradesChart.data.datasets[0].borderColor = isLight ? '#9370db' : '#00f7ff';
+      gradesChart.options.scales.y.grid.color = isLight ? 'rgba(147, 112, 219, 0.1)' : 'rgba(255, 255, 255, 0.1)';
+      gradesChart.options.scales.x.grid.color = isLight ? 'rgba(147, 112, 219, 0.1)' : 'rgba(255, 255, 255, 0.1)';
+      gradesChart.options.scales.y.ticks.color = isLight ? '#2d2b38' : '#fff';
+      gradesChart.options.scales.x.ticks.color = isLight ? '#2d2b38' : '#fff';
+      gradesChart.options.plugins.legend.labels.color = isLight ? '#2d2b38' : '#fff';
+      gradesChart.update();
+
+      // Update web design chart
+      webDesignChart.options.scales.y.grid.color = isLight ? 'rgba(147, 112, 219, 0.1)' : 'rgba(255, 255, 255, 0.1)';
+      webDesignChart.options.scales.x.grid.color = isLight ? 'rgba(147, 112, 219, 0.1)' : 'rgba(255, 255, 255, 0.1)';
+      webDesignChart.options.scales.y.ticks.color = isLight ? '#2d2b38' : '#fff';
+      webDesignChart.options.scales.x.ticks.color = isLight ? '#2d2b38' : '#fff';
+      webDesignChart.options.plugins.legend.labels.color = isLight ? '#2d2b38' : '#fff';
+      webDesignChart.update();
+    });
+  </script>
+</body>
+</html>
+>>>>>>> 5300ce23d26cc7e2ce512c810b839b528afc089e
